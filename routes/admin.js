@@ -1,10 +1,11 @@
 const express = require('express')
-
+const path = require('path')
+const rootDir = require('../utils/path')
 const router = express.Router()
 
 router.get('/add-product',(req,res,next)=>{
     console.log('In the Product Middle ware')
-    res.send('<form action="/product" method="POST"><input type="text" name="title"><button type="submit">Add Product</button></form>')
+    res.sendFile(path.join(rootDir,'views','add-product.html'))
     //next(); // to call the next middle ware functions
 })
 
