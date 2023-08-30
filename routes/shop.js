@@ -1,13 +1,15 @@
-const express = require('express')
-const path = require('path')
-const router = express.Router()
-const rootDir = require('../utils/path')
+const path = require('path');
 
-router.get('/',(req,res,next)=>{
-    //console.log('In the main Middle ware')
-    //res.send('<h1>Hello From Express JS</h1>')
-    //next(); // to call the next middle ware functions
-    // ../ is root parent directory
-    res.sendFile(path.join(rootDir,'views','shop.html'))
-})
-module.exports = router
+const express = require('express');
+
+const rootDir = require('../util/path');
+const adminData = require('./admin');
+
+const router = express.Router();
+
+router.get('/', (req, res, next) => {
+  console.log('shop.js', adminData.products);
+  res.sendFile(path.join(rootDir, 'views', 'shop.html'));
+});
+
+module.exports = router;
