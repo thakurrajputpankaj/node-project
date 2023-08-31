@@ -1,2 +1,3 @@
 sudo npm install --save body-parser
 sudo npm install --save express
+sudo npm install --save mysql2
