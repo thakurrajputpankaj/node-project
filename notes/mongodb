@@ -1,0 +1,1 @@
+.collection.find({_id : new mongodb.ObjectId(prodID)})
